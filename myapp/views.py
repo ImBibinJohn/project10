@@ -51,7 +51,6 @@ def registration(request):
 
 
 def admin_login(request):
-
     if request.method == 'POST':
         if Admin_register.objects.filter(username=request.POST['username'], password=request.POST['password'], designation="admin").exists():
             member = Admin_register.objects.get(
