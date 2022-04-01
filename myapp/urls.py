@@ -5,12 +5,12 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    re_path(r'^$', views.admin_log, name='admin_log'),
+    re_path(r'^admin_log$', views.admin_log, name='admin_log'),
     re_path(r'^admin_login$', views.admin_login, name='admin_login'),
     re_path(r'^modelshow/(?P<id>\d+)$', views.modelshow, name='modelshow'),
     re_path(r'^admin_dashboard$', views.admin_dashboard, name='admin_dashboard'),
     re_path(r'^registration$', views.registration, name='registration'),
-    re_path(r'^home$', views.home, name='home'),
+    re_path(r'^$', views.home, name='home'),
     re_path(r'^new_page/(?P<id>\d+)$', views.new_page, name='new_page'),
     re_path(r'^sub/(?P<id>\d+)/(?P<key>[-:\w]+)$', views.sub, name='sub'),
     
