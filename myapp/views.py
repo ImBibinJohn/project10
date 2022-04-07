@@ -10,6 +10,12 @@ def home(request):
     it = categories.objects.all()
     return render(request, 'home.html',{'it': it})
 
+def userhome(request):
+    members = request.session['admid']
+    member = Admin_register.objects.get(reg_id=members)
+    it = categories.objects.all()
+    return render(request, 'home.html',{'it': it, 'member': member})
+
 def test_page(request):
     it = categories.objects.all()
     its = items.objects.all()
@@ -62,7 +68,7 @@ def admin_login(request):
             member = Admin_register.objects.get(
                 username=request.POST['username'], password=request.POST['password'])
             request.session['admid'] = member.reg_id
-            return redirect('home')
+            return redirect('userhome')
 
         else:
             return redirect('admin_log')
