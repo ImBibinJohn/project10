@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'dimenz.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dimenzionsdb',
+        'NAME': 'dimenzionsdbs',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',
