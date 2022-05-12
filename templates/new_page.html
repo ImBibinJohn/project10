@@ -131,11 +131,9 @@
             {% for k in man1 %}
             <div class="col-md-4 mt-5 cards">
                 <div class="card">
-                    <a href="" data-toggle="modal" data-target="#modal{{ k.id }}">
                         <model-viewer class="home-img3" src="{{ k.gib.url }}" alt="New York" ar
                             ar-modes="webxr scene-viewer quick-look" environment-image="neutral" auto-rotate
                             camera-controls></model-viewer>
-                    </a>
                     <div class="card-body">
                         <h2 class="card-title">{{k.modelname}}</h2>
                         <div class="d-flex justify-content-between">
