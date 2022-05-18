@@ -87,10 +87,8 @@ def admin_dashboard(request):
 
 
 def show_category(request):
-
     caty = categories.objects.all()
     return render(request, 'categories.html', {'caty': caty})
-
 
 def add_category(request):
     try:
@@ -99,13 +97,18 @@ def add_category(request):
             category_name = request.POST['category_name']
             category_logo = request.FILES['category_logo']
             sub_category1 = request.POST['sub_category1']
+            strippeddata1 = sub_category1.replace(" ", "")
             sub_category2 = request.POST['sub_category2']
+            strippeddata2 = sub_category2.replace(" ", "")
             sub_category3 = request.POST['sub_category3']
+            strippeddata3 = sub_category3.replace(" ", "")
             sub_category4 = request.POST['sub_category4']
+            strippeddata4 = sub_category4.replace(" ", "")
             sub_category5 = request.POST['sub_category5']
+            strippeddata5 = sub_category5.replace(" ", "")
 
-            cat = categories(category_name=category_name, category_logo=category_logo, sub_category1=sub_category1,
-                             sub_category2=sub_category2, sub_category3=sub_category3, sub_category4=sub_category4, sub_category5=sub_category5)
+            cat = categories(category_name=category_name, category_logo=category_logo, sub_category1=strippeddata1,
+                             sub_category2=strippeddata2, sub_category3=strippeddata3, sub_category4=strippeddata4, sub_category5=strippeddata5)
             cat.save()
 
             return redirect('category')
