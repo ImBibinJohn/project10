@@ -36,15 +36,21 @@
       <a class="navbar-brand text-light" href="#">DimenZions</a>
       <li style="list-style-type: none;" class="nav-item dropdown">
         <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" role="button"
-          data-bs-toggle="dropdown" aria-expanded="false">
-          3D Models
+            data-bs-toggle="dropdown" aria-expanded="false">
+            3D Models
         </a>
-        <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink" style="background-color: #082835;">
-          <li><a class="dropdown-item " href="#">Action</a></li>
-          <li><a class="dropdown-item " href="#">Another action</a></li>
-          <li><a class="dropdown-item " href="#">Something else here</a></li>
+        <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink"
+            style="background-color: #082835;">
+            <li>
+
+                {% for k in it %}
+                    <a class="dropdown-item " href="{% url 'new_page' k.cat_id %}">
+                        {{k.category_name}}</a>
+                {% endfor %}
+
+            </li>
         </ul>
-      </li>
+    </li>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown2"
         aria-controls="navbarNavDropdown2" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

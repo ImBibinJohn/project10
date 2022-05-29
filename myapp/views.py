@@ -30,7 +30,8 @@ def modelshow(request, id):
 def new_page(request, id):
     man1 = items.objects.filter(cat_id_id=id)
     man = categories.objects.get(cat_id=id)
-    return render(request, 'new_page.html', {'man': man, 'man1': man1})
+    it = categories.objects.all()
+    return render(request, 'new_page.html', {'man': man, 'man1': man1, 'it': it})
 
 
 def sub(request, id, key):
@@ -140,7 +141,9 @@ def createmodel(request):
         modelname = request.POST['modelname']
         description = request.POST['description']
         gib = request.FILES['gib']
-        price = request.POST['price']
+        price0 = request.POST['price']
+        price1 = "$"
+        price = price1+price0
         types = request.POST['types']
         format = request.POST['format']
         modeltype = request.POST['modeltype']
