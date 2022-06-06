@@ -142,8 +142,12 @@ def createmodel(request):
         description = request.POST['description']
         gib = request.FILES['gib']
         price0 = request.POST['price']
-        price1 = "$"
-        price = price1+price0
+        if price0 == "":
+            price1 = "$"
+            price = price1+str("0")
+        else:
+            price1 = "$"
+            price = price1+price0   
         types = request.POST['types']
         format = request.POST['format']
         modeltype = request.POST['modeltype']
